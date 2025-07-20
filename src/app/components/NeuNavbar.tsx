@@ -16,6 +16,7 @@ interface NeuNavbarProps {
 
 const NeuNavbar = ({ navItems, activeSection, onSectionClick }: NeuNavbarProps) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleSectionClick = (sectionId: string) => {
     // Close menu immediately for better UX
@@ -25,6 +26,20 @@ const NeuNavbar = ({ navItems, activeSection, onSectionClick }: NeuNavbarProps) 
       onSectionClick(sectionId);
     }, 50);
   };
+
+  // Detect mobile device
+  useEffect(() => {
+    const checkMobile = () => {
+      const isMobileDevice = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const isTouchDevice = 'ontouchstart' in window;
+      const isSmallScreen = window.innerWidth < 768;
+      setIsMobile(isMobileDevice || (isTouchDevice && isSmallScreen));
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // Close mobile menu when clicking outside
   useEffect(() => {
@@ -94,42 +109,35 @@ const NeuNavbar = ({ navItems, activeSection, onSectionClick }: NeuNavbarProps) 
       </div>
 
       {/* Mobile Dropdown Menu */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-                     <motion.div
-            className="md:hidden bg-white border-b-4 border-black shadow-[0px_6px_0px_black]"
-            initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
-            exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3, ease: "easeOut" }}
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item, index) => (
-                <motion.button
-                  key={item.id}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    handleSectionClick(item.id);
-                  }}
-                  className={`w-full px-6 py-4 font-black text-lg uppercase tracking-wider border-4 border-black transition-all duration-200 ${
-                    activeSection === item.id 
-                      ? 'bg-purple-500 text-white shadow-[4px_4px_0px_black]' 
-                      : 'bg-gray-100 text-black shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px]'
-                  }`}
-                  initial={{ x: -100, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ duration: 0.1, delay: index * 0.1 }}
-                  whileTap={{ scale: 0.98 }}
-                >
-                  {item.label}
-                </motion.button>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {mobileMenuOpen && (
+        <div
+          className={`md:hidden bg-white border-b-4 border-black shadow-[0px_6px_0px_black] transition-all duration-300 ease-out ${
+            isMobile ? 'transform-none' : ''
+          }`}
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item, index) => (
+              <button
+                key={item.id}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  handleSectionClick(item.id);
+                }}
+                className={`w-full px-6 py-4 font-black text-lg uppercase tracking-wider border-4 border-black transition-all duration-200 ${
+                  activeSection === item.id 
+                    ? 'bg-purple-500 text-white shadow-[4px_4px_0px_black]' 
+                    : 'bg-gray-100 text-black shadow-[4px_4px_0px_black] hover:shadow-[2px_2px_0px_black] hover:translate-x-[2px] hover:translate-y-[2px]'
+                } ${isMobile ? 'opacity-100' : ''}`}
+                style={isMobile ? {} : undefined}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
     </motion.nav>
   );
 };
