@@ -73,7 +73,7 @@ const NeuNavbar = ({ navItems, activeSection, onSectionClick }: NeuNavbarProps) 
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            HVAC <span className="text-purple-500">RECRUITING</span>
+            HVAC<span className="text-purple-500">RECRUITER</span>.co 
           </motion.div>
           
           {/* Desktop Menu */}

@@ -9,7 +9,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "HVAC Recruiting Experts | Get Qualified HVAC Techs Fast",
+  title: "HVAC Recruiting Expert | Get Qualified HVAC Techs Fast",
   description: "Stop losing business waiting on techs. Get qualified HVAC talent lined up and ready to interview. Professional HVAC recruiting services.",
   keywords: "HVAC recruiting, HVAC technicians, HVAC installers, HVAC talent, HVAC jobs",
 };
