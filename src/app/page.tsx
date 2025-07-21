@@ -303,7 +303,13 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.6 }}
             viewport={{ once: true }}
           >
-            yeshaya@yeshaya.dev
+            <a
+              href="mailto:yeshaya@hvacrecruiter.co"
+              className="hover:underline focus:underline outline-none transition-colors duration-200"
+              aria-label="Send email to yeshaya@hvacrecruiter.co"
+            >
+              yeshaya@hvacrecruiter.co
+            </a>
           </motion.p>
         </div>
       </section>
