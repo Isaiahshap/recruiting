@@ -45,10 +45,10 @@ export default function Home() {
   }, []);
 
   const navItems = [
-    { id: 'about', label: 'WHO I RECRUIT' },
-    { id: 'pricing', label: 'PRICING' },
-    { id: 'timeline', label: 'HOW IT WORKS' },
-    { id: 'contact', label: 'CONTACT' },
+    { id: 'home', label: 'HOME', href: '/' },
+    { id: 'about', label: 'ABOUT', href: '/about' },
+    { id: 'locations', label: 'LOCATIONS', href: '/locations' },
+    { id: 'contact', label: 'CONTACT', href: '/contact' },
   ];
 
   const timelineItems = [

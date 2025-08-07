@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://hvacrecruiter.co/sitemap.xml
+
+# Crawl-delay (seconds between requests)
+Crawl-delay: 1
+
+# Explicitly list key pages for clarity (optional, but helpful)
+Allow: /about
+Allow: /contact
+Allow: /locations
+Allow: /locations/new-york
+Allow: /locations/los-angeles
+Allow: /locations/houston
+Allow: /locations/phoenix
+Allow: /locations/denver
+Allow: /locations/asheville
