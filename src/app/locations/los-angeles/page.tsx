@@ -389,58 +389,61 @@ export default function LosAngeles() {
         </div>
       </section>
 
-      {/* Local Stats */}
-      <section className="py-20 px-4 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2 
-            className="text-4xl md:text-6xl font-black uppercase text-center mb-16 tracking-wider text-black"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            LA MARKET <span className="text-green-500">DATA</span>
-          </motion.h2>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                stat: "$60K-$85K",
-                label: "Average HVAC Tech Salary Range",
-                note: "Higher in Beverly Hills/Santa Monica"
-              },
-              {
-                stat: "22%",
-                label: "Job Growth Rate (Next 5 Years)",
-                note: "Driven by construction boom"
-              },
-              {
-                stat: "2,800+",
-                label: "Open HVAC Positions",
-                note: "Across Greater LA area"
-              }
-            ].map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: true }}
-              >
-                <NeuCard className="p-8 text-center" variant="highlight">
-                  <h3 className="text-4xl font-black mb-4 text-green-500">{item.stat}</h3>
-                  <p className="text-lg font-bold text-black uppercase tracking-wider mb-2">
-                    {item.label}
-                  </p>
-                  <p className="text-sm font-bold text-purple-500">
-                    {item.note}
-                  </p>
-                </NeuCard>
-              </motion.div>
-            ))}
+        {/* Local Stats */}
+        <section className="py-20 px-4 bg-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <motion.h2 
+              className="text-4xl md:text-6xl font-black uppercase text-center mb-16 tracking-wider text-black"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              LA MARKET <span className="text-green-500">DATA</span>
+            </motion.h2>
+            
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  stat: "$60K-$85K",
+                  label: "Average HVAC Tech Salary Range",
+                  note: "Higher in Beverly Hills/Santa Monica"
+                },
+                {
+                  stat: "22%",
+                  label: "Job Growth Rate (Next 5 Years)",
+                  note: "Driven by construction boom"
+                },
+                {
+                  stat: "1,000+",
+                  label: "Open HVAC Positions",
+                  note: "Across Greater LA area"
+                }
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  <NeuCard className="p-8 text-center" variant="highlight">
+                    <h3 className="text-4xl font-black mb-4 text-green-500">{item.stat}</h3>
+                    <p className="text-lg font-bold text-black uppercase tracking-wider mb-2">
+                      {item.label}
+                    </p>
+                    <p className="text-sm font-bold text-purple-500">
+                      {item.note}
+                    </p>
+                  </NeuCard>
+                </motion.div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-500 text-center mt-6">
+              * Market data is approximate and for informational purposes only. Actual figures may vary.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* CTA Section */}
       <section className="py-20 px-4 bg-white">

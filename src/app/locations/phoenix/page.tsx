@@ -34,7 +34,55 @@ export default function Phoenix() {
           {specialties.map((s,i)=>(<motion.div key={i} initial={{opacity:0,y:50}} whileInView={{opacity:1,y:0}} transition={{duration:0.6,delay:i*0.2}} viewport={{once:true}}><NeuCard className="p-8 h-full" variant="default" hoverable><div className="flex justify-between mb-4"><h3 className="text-2xl font-black text-purple-500 uppercase flex-1">{s.title}</h3><span className="text-sm font-black text-red-500 uppercase bg-red-100 px-3 py-1 border-2 border-black">{s.demand}</span></div><p className="font-bold">{s.description}</p></NeuCard></motion.div>))}
         </div></div></section>
       <section className="py-20 px-4 bg-gray-100"><div className="max-w-6xl mx-auto text-center"><motion.h2 className="text-4xl md:text-6xl font-black uppercase mb-16" initial={{opacity:0,scale:0.8}} whileInView={{opacity:1,scale:1}} transition={{duration:0.8}} viewport={{once:true}}>SERVICE <span className="text-green-500">AREAS</span></motion.h2><NeuCard className="p-8" variant="highlight"><div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">{serviceAreas.map((a,i)=>(<div key={i} className="flex items-start"><span className="text-green-500 mr-3 font-black text-xl">▶</span><span className="font-bold">{a}</span></div>))}</div></NeuCard></div></section>
-      <section className="py-20 px-4 bg-white"><div className="max-w-6xl mx-auto text-center"><motion.h2 className="text-4xl md:text-6xl font-black uppercase mb-16" initial={{opacity:0,y:50}} whileInView={{opacity:1,y:0}} transition={{duration:0.8}} viewport={{once:true}}>PHOENIX MARKET <span className="text-green-500">DATA</span></motion.h2><div className="grid md:grid-cols-3 gap-8">{[{stat:'$50K-$80K',label:'Avg Tech Salary',note:'Cooling experts higher'},{stat:'20%',label:'Job Growth',note:'5-year projection'},{stat:'2,500+',label:'Open Positions',note:'Across Phoenix metro'}].map((d,i)=>(<motion.div key={i} initial={{opacity:0,y:50}} whileInView={{opacity:1,y:0}} transition={{duration:0.6,delay:i*0.2}} viewport={{once:true}}><NeuCard className="p-8 text-center" variant="highlight"><h3 className="text-4xl font-black mb-4 text-green-500">{d.stat}</h3><p className="text-lg font-bold uppercase mb-2">{d.label}</p><p className="text-sm font-bold text-purple-500">{d.note}</p></NeuCard></motion.div>))}</div></div></section>
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto text-center">
+          <motion.h2
+            className="text-4xl md:text-6xl font-black uppercase mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            PHOENIX MARKET <span className="text-green-500">DATA</span>
+          </motion.h2>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              {
+                stat: '$50K-$80K',
+                label: 'Avg Tech Salary',
+                note: 'Cooling experts higher'
+              },
+              {
+                stat: '20%',
+                label: 'Job Growth',
+                note: '5-year projection'
+              },
+              {
+                stat: '1,000+',
+                label: 'Open Positions',
+                note: 'Across Phoenix metro'
+              }
+            ].map((d, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: i * 0.2 }}
+                viewport={{ once: true }}
+              >
+                <NeuCard className="p-8 text-center" variant="highlight">
+                  <h3 className="text-4xl font-black mb-4 text-green-500">{d.stat}</h3>
+                  <p className="text-lg font-bold uppercase mb-2">{d.label}</p>
+                  <p className="text-sm font-bold text-purple-500">{d.note}</p>
+                </NeuCard>
+              </motion.div>
+            ))}
+          </div>
+          <p className="text-xs text-gray-500 text-center mt-6">
+            * Market data is approximate and for informational purposes only. Actual figures may vary.
+          </p>
+        </div>
+      </section>
       <section className="py-20 px-4 bg-gray-100 text-center"><motion.h2 className="text-4xl md:text-6xl font-black uppercase mb-8" initial={{opacity:0,scale:0.8}} whileInView={{opacity:1,scale:1}} transition={{duration:0.8}} viewport={{once:true}}>BEAT THE <span className="text-purple-500">PHOENIX HEAT</span></motion.h2><NeuButton onClick={()=>window.location.href='mailto:yeshaya@hvacrecruiter.co?subject=Phoenix HVAC Recruiting - Ready to Start'} variant="primary" size="lg">START HUNTING PHOENIX TECHS NOW</NeuButton></section>
       <footer className="py-16 px-4 bg-white border-t-4 border-black text-center"><p className="font-bold uppercase tracking-wider">© 2025 YESHAYA.DEV LLC. ALL RIGHTS RESERVED.</p></footer>
     </div>

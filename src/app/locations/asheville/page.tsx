@@ -154,7 +154,7 @@ export default function Asheville() {
             {[
               { stat: '$45K-$70K', label:'Avg HVAC Tech Salary', note:'Heat-pump specialists higher' },
               { stat: '15%', label:'Job Growth (5yr)', note:'Sustainable construction boom' },
-              { stat: '600+', label:'Open Positions', note:'Across WNC region' }
+              { stat: '300+', label:'Open Positions', note:'Across WNC region' }
             ].map((item,idx)=>(
               <motion.div key={idx} initial={{ opacity:0, y:50}} whileInView={{ opacity:1, y:0}} transition={{ duration:0.6, delay: idx*0.2}} viewport={{ once:true}}>
                 <NeuCard className="p-8 text-center" variant="highlight">
@@ -165,6 +165,9 @@ export default function Asheville() {
               </motion.div>
             ))}
           </div>
+          <p className="text-xs text-gray-500 text-center mt-6">
+            * Market data is approximate and for informational purposes only. Actual figures may vary.
+          </p>
         </div>
       </section>
 

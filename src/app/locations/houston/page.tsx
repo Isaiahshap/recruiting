@@ -334,7 +334,7 @@ export default function Houston() {
                 note: "Driven by energy sector expansion"
               },
               {
-                stat: "3,400+",
+                stat: "1,000+",
                 label: "Open HVAC Positions",
                 note: "Across Greater Houston area"
               }
@@ -358,6 +358,9 @@ export default function Houston() {
               </motion.div>
             ))}
           </div>
+          <p className="text-xs text-gray-500 text-center mt-6">
+            * Market data is approximate and for informational purposes only. Actual figures may vary.
+          </p>
         </div>
       </section>
 

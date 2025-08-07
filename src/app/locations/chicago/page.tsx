@@ -326,7 +326,7 @@ export default function Chicago() {
                 note: "Driven by infrastructure needs"
               },
               {
-                stat: "2,400+",
+                stat: "1,000+",
                 label: "Open HVAC Positions",
                 note: "Across Chicagoland area"
               }
@@ -350,6 +350,9 @@ export default function Chicago() {
               </motion.div>
             ))}
           </div>
+          <p className="text-xs text-gray-500 text-center mt-6">
+            * Market data is approximate and for informational purposes only. Actual figures may vary.
+          </p>
         </div>
       </section>
 

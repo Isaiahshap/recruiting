@@ -341,7 +341,7 @@ export default function NewYork() {
                 note: "Above national average"
               },
               {
-                stat: "3,200+",
+                stat: "1,000+",
                 label: "Open HVAC Positions",
                 note: "Across NYC metro area"
               }
@@ -365,6 +365,9 @@ export default function NewYork() {
               </motion.div>
             ))}
           </div>
+          <p className="text-xs text-gray-500 text-center mt-6">
+            * Market data is approximate and for informational purposes only. Actual figures may vary.
+          </p>
         </div>
       </section>
 
